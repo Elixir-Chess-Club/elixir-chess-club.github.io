@@ -1,4 +1,4 @@
-# exilir_chess
+# exilir_chess_club
 
 A new Flutter project.
 

@@ -1,6 +1,6 @@
 {
-    "name": "exilir_chess",
-    "short_name": "exilir_chess",
+    "name": "exilir_chess_club",
+    "short_name": "exilir_chess_club",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
