@@ -1,0 +1,34 @@
+name: Build and Release
+
+on:
+  push:
+    branches:
+    - master
+    
+jobs:
+  web:
+    runs-on: ubuntu-latest
+    container: ghcr.io/cirruslabs/flutter:beta
+    steps:
+    - uses: actions/checkout@v4
+    - name: Build
+      run: flutter build web --base-href /elixir_chess/ --release
+    - name: Git config
+      run: |
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git config --global user.name "github-actions[bot]"
+    - name: Commit changes
+      run: |
+        touch .nojekyll
+        git config --global --add safe.directory /__w/elixir_chess/elixir_chess
+        mv build/web/ docs/ && git add docs/ .nojekyll
+        git commit -am "add web"
+    - name: Push
+      uses: CasperWA/push-protected@v2
+      with:
+        token: ${{ secrets.ELIXIR_PAT }}
+        branch: website
+        force: true
+
+    
+    
