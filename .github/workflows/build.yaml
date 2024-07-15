@@ -20,7 +20,7 @@ jobs:
     - name: Commit changes
       run: |
         touch .nojekyll
-        git config --global --add safe.directory /__w/elixir_chess/elixir_chess
+        git config --global --add safe.directory /__w/elixir_chess_club/elixir_chess_club
         mv build/web/ docs/ && git add docs/ .nojekyll
         git commit -am "add web"
     - name: Push
