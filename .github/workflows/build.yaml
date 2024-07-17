@@ -12,7 +12,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build
-      run: flutter build web --base-href /elixir-chess-club.github.io/ --release
+      run: flutter build web --base-href / --release
     - name: Git config
       run: |
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
