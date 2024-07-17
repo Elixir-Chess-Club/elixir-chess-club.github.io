@@ -12,7 +12,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build
-      run: flutter build web --base-href /elixir_chess_club/ --release
+      run: flutter build web --base-href /elixir-chess-club.github.io/ --release
     - name: Git config
       run: |
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
@@ -20,7 +20,7 @@ jobs:
     - name: Commit changes
       run: |
         touch .nojekyll
-        git config --global --add safe.directory /__w/elixir_chess_club/elixir_chess_club
+        git config --global --add safe.directory /__w/elixir-chess-club.github.io/elixir-chess-club.github.io
         mv build/web/ docs/ && git add docs/ .nojekyll
         git commit -am "add web"
     - name: Push
